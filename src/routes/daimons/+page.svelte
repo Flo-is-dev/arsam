@@ -5,16 +5,16 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     
     // Import assets from mimouna folder
-    import imgBillboard from "$lib/assets/daimons/daimon-bg.png";
-    import imgPapeterie from "$lib/assets/daimons/Group-355.svg";
-    import imgMoodboard from "$lib/assets/daimons/Frame 40.svg";
-    import imgVariant from "$lib/assets/daimons/Frame 41.svg";
+    import imgBillboard from "$lib/assets/Daimons/daimon-bg.png";
+    import imgPapeterie from "$lib/assets/Daimons/Group-355.svg";
+    import imgMoodboard from "$lib/assets/Daimons/Frame 40.svg";
+    import imgVariant from "$lib/assets/Daimons/Frame 41.svg";
 
     // Assets for horizontal scroll
-    import imgHotelKit from "$lib/assets/daimons/Layer_1.svg";
-    import imgHygieneKit from "$lib/assets/daimons/image 1.svg";
-    import imgCards from "$lib/assets/daimons/Group-355.svg";
-    import imgV from "$lib/assets/daimons/11472844.png";
+    import imgHotelKit from "$lib/assets/Daimons/Layer_1.svg";
+    import imgHygieneKit from "$lib/assets/Daimons/image 1.svg";
+    import imgCards from "$lib/assets/Daimons/Group-355.svg";
+    import imgV from "$lib/assets/Daimons/11472844.png";
 
     let horizontalSection;
     let horizontalContainer;

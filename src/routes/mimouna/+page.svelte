@@ -5,16 +5,16 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     
     // Import assets from mimouna folder
-    import imgBillboard from "$lib/assets/mimouna/mimouna-bg.png";
-    import imgPapeterie from "$lib/assets/mimouna/Mimouna-Social-Media-posts.png";
-    import imgMoodboard from "$lib/assets/mimouna/Mimouna-Moodbardpng.png";
-    import imgVariant from "$lib/assets/mimouna/mimouna-logo.png";
+    import imgBillboard from "$lib/assets/Mimouna/mimouna-bg.png";
+    import imgPapeterie from "$lib/assets/Mimouna/Mimouna-Social-Media-posts.png";
+    import imgMoodboard from "$lib/assets/Mimouna/Mimouna-Moodbardpng.png";
+    import imgVariant from "$lib/assets/Mimouna/mimouna-logo.png";
 
     // Assets for horizontal scroll
-    import imgHotelKit from "$lib/assets/mimouna/Mimouna-Hotel Kit.png";
-    import imgHygieneKit from "$lib/assets/mimouna/Mimouna-Hygiene Kit.png";
-    import imgCards from "$lib/assets/mimouna/Mimouna-Card et Visit cards.png";
-    import imgMockupHero from "$lib/assets/mimouna/Plan de travail 11.png";
+    import imgHotelKit from "$lib/assets/Mimouna/Mimouna-Hotel Kit.png";
+    import imgHygieneKit from "$lib/assets/Mimouna/Mimouna-Hygiene Kit.png";
+    import imgCards from "$lib/assets/Mimouna/Mimouna-Card et Visit cards.png";
+    import imgMockupHero from "$lib/assets/Mimouna/Plan de travail 11.png";
 
     let horizontalSection;
     let horizontalContainer;
