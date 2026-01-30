@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Marcel - Strobe Loader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-chocolate: #2D1B0E;
+            --text-cream: #F5E6D3;
+            --font-main: 'Archivo Black', sans-serif;
+            --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        body {
+            background-color: var(--text-cream); /* Landing page background */
+            color: var(--bg-chocolate);
+            font-family: var(--font-main);
+            overflow: hidden;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* --- LAYERS --- */
+        
+        /* Layer 3: Black Intro Curtain */
+        #intro-curtain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: #000000;
+            z-index: 60;
+            transform: translateY(0%);
+            transition: transform 1.2s var(--ease-out-expo);
+            will-change: transform;
+        }
+
+        /* Layer 2: The Loader (Chocolate) */
+        #loader-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--bg-chocolate);
+            color: var(--text-cream);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateY(0%);
+            transition: transform 1.2s var(--ease-out-expo);
+            will-change: transform;
+            cursor: wait;
+        }
+
+        /* Layer 1: Mock Landing Page (Revealed at end) */
+        #landing-page {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            opacity: 1;
+        }
+
+        /* --- ANIMATION CLASSES --- */
+        .slide-up {
+            transform: translateY(-100%) !important;
+        }
+
+        /* --- GLOBAL GRAIN (Inside loader only for performance) --- */
+        .noise-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 10;
+            opacity: 0.07;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Utility */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--text-cream);
+        }
+
+        /* --- LOADER CONTENT --- */
+        /* Top Static Text - Updated to match Strobe */
+        .static-label {
+            font-family: var(--font-main);
+            font-size: 7vw;
+            line-height: 0.9;
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            padding: 0 5vw;
+            margin-bottom: 0;
+        }
+
+        /* Strobe Words */
+        .strobe-text {
+            font-size: 9vw;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 0.9;
+            width: 100%;
+            padding: 0 5vw;
+        }
+        
+        .strobe-text span {
+            display: block;
+        }
+
+        /* Bottom Right Loader */
+        .loader-counter {
+            position: absolute;
+            bottom: 3rem;
+            right: 3rem;
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: -2px;
+            font-variant-numeric: tabular-nums;
+        }
+        
+        /* --- LANDING CONTENT --- */
+        .landing-title {
+            font-size: 5vw;
+            text-transform: uppercase;
+            color: var(--bg-chocolate);
+        }
+        .landing-subtitle {
+            font-family: sans-serif;
+            letter-spacing: 2px;
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 768px) {
+            .strobe-text, .static-label { font-size: 15vw; }
+            .loader-counter { font-size: 2.5rem; bottom: 2rem; right: 2rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- LAYER 3: BLACK CURTAIN -->
+    <div id="intro-curtain"></div>
+
+    <!-- LAYER 2: LOADER -->
+    <div id="loader-container">
+        <!-- Texture inside loader -->
+        <div class="noise-overlay"></div>
+
+        <div class="static-label">Pour les marques</div>
+
+        <div id="strobe-target" class="strobe-text">
+            <span>ARTISANALES</span>
+        </div>
+
+        <div id="counter" class="loader-counter">0%</div>
+    </div>
+
+    <!-- LAYER 1: LANDING PAGE (MOCKUP) -->
+    <main id="landing-page">
+        <h1 class="landing-title">Henry Marcel</h1>
+        <p class="landing-subtitle">SELECTED WORKS 2024-2026</p>
+    </main>
+
+    <script>
+        // --- CONFIGURATION ---
+        const words = ["ARTISANALES", "CULTURELLES", "INNOVANTES", "IMPACTANTES", "AUTHENTIQUES"];
+        const duration = 3000; // 4 seconds total
+        const strobeIntervalTime = 350; 
+
+        // --- DOM ELEMENTS ---
+        const strobeTarget = document.getElementById('strobe-target');
+        const counterEl = document.getElementById('counter');
+        const introCurtain = document.getElementById('intro-curtain');
+        const loaderContainer = document.getElementById('loader-container');
+
+        // --- ANIMATION SEQUENCE ---
+        
+        // 1. Start with Black Screen (Default CSS)
+        
+        // 2. Reveal Loader after short delay
+        window.onload = () => {
+            setTimeout(() => {
+                introCurtain.classList.add('slide-up');
+                
+                // Start Counter only when loader begins to reveal
+                requestAnimationFrame(updateCounter);
+                
+                // Start Strobe
+                startStrobe();
+            }, 500);
+        };
+
+        // --- STROBE LOGIC ---
+        function startStrobe() {
+            let wordIndex = 0;
+            strobeTarget.innerHTML = `<span>${words[0]}</span>`;
+            
+            setInterval(() => {
+                wordIndex = (wordIndex + 1) % words.length;
+                const word = words[wordIndex];
+                const isOutline = Math.random() > 0.4;
+                
+                if (isOutline) {
+                    strobeTarget.innerHTML = `<span class="text-outline">${word}</span>`;
+                } else {
+                    strobeTarget.innerHTML = `<span>${word}</span>`;
+                }
+            }, strobeIntervalTime);
+        }
+
+        // --- COUNTER LOGIC ---
+        let startTime = null;
+
+        function updateCounter(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = timestamp - startTime;
+            
+            let percent = Math.min(Math.floor((progress / duration) * 100), 100);
+            counterEl.innerText = percent + "%";
+
+            if (progress < duration) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                // 3. Animation Complete -> Hide Loader (Slide Up)
+                counterEl.innerText = "100%";
+                setTimeout(() => {
+                    loaderContainer.classList.add('slide-up');
+                }, 200); // Slight pause at 100% before exit
+            }
+        }
+
+    </script>
+</body>
+</html>
