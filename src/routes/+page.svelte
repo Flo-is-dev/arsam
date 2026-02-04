@@ -230,7 +230,7 @@
                         <li>3 allers-retours inclus</li>
                     </ul>
                     <div class="offer-price-wrapper">
-                        <a href="https://wa.me/33600000000?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'ESSENTIEL%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">
+                        <a href="https://wa.me/33768702214?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'ESSENTIEL%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">
                             <span class="btn-label-wrapper">
                                 <span class="btn-label">À partir de 850 €</span>
                                 <span class="btn-label btn-label-hover">À partir de 850 €</span>
@@ -250,7 +250,7 @@
                         <li>Templates réseaux sociaux personnalisables</li>
                     </ul>
                     <div class="offer-price-wrapper">
-                        <a href="https://wa.me/33600000000?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'ÉTENDU%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">
+                        <a href="https://wa.me/33768702214?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'ÉTENDU%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">
                             <span class="btn-label-wrapper">
                                 <span class="btn-label">À partir de 1 250 €</span>
                                 <span class="btn-label btn-label-hover">À partir de 1 250 €</span>
@@ -269,7 +269,7 @@
                         <li>Révisions illimitées</li>
                     </ul>
                     <div class="offer-price-wrapper">
-                        <a href="https://wa.me/33600000000?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'INTÉGRAL%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">
+                        <a href="https://wa.me/33768702214?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'INTÉGRAL%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">
                             <span class="btn-label-wrapper">
                                 <span class="btn-label">À partir de 2 450 €</span>
                                 <span class="btn-label btn-label-hover">À partir de 2 450 €</span>
@@ -587,7 +587,7 @@
 
     @media (min-width: 1024px) {
         .offers-section {
-            background: url("../lib/assets/bg-wave.webp") center/cover no-repeat;
+            background: url("../lib/assets/bg-wave.webp") center/cover no-repeat !important;
             background-attachment: fixed;
         }
     }
