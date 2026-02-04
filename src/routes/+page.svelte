@@ -156,7 +156,7 @@
                     De la stratégie à la maquette de votre site web, je transforme votre marque en une identité visuelle authentique et mémorable.
                 </p>
                 <div class="hero-cta">
-                    <a href="/ethic" class="btn-premium light-btn">
+                    <a href="#projets" class="btn-premium light-btn">
                         <span class="btn-label-wrapper">
                             <span class="btn-label">Voir les projets</span>
                             <span class="btn-label btn-label-hover">Voir les projets</span>
@@ -197,17 +197,18 @@
             <div class="vision-content">
                 <h3 class="vision-subtitle">J’accompagne les structures qui ont une vraie histoire à raconter.</h3>
                 <p>Vous êtes une marque artisanale, propriétaire d’un lieu atypique ou historique, une entreprise familiale, ou bien une marque qui connecte plusieurs cultures et célèbrent son double héritage ? </p>
-                <p>Ces histoires méritent une identité visuelle authentique. Pas un logo générique. Mais une identité profondément ancrée, qui porte du sens, qui crée de la connexion avec votre vision.</p>
-            </div>
-        </div>
-        <div class="final-cta">
+                <p>Ces histoires méritent une identité visuelle authentique. Pas un logo générique. Mais une identité profondément ancrée, qui porte du sens, qui crée de la connexion avec votre vision.</p><div class="final-cta">
                 <a href="a-propos" target="_blank" class="btn-premium dark-btn large-btn">
                     <span class="btn-label-wrapper">
-                        <span class="btn-label">On parle de votre projet ?</span>
-                        <span class="btn-label btn-label-hover">On parle de votre projet ?</span>
+                        <span class="btn-label">Découvrir Arsaam Studio</span>
+                        <span class="btn-label btn-label-hover">Découvrir Arsaam Studio</span>
                     </span>
                 </a>
             </div>
+            </div>
+            
+        </div>
+        
     </section>
 
     <!-- OFFERS SECTION -->
@@ -301,8 +302,8 @@
             <div class="final-cta">
                 <a href="https://cal.com/arsaam-studio/30min?user=arsaam-studio" target="_blank" class="btn-premium dark-btn large-btn">
                     <span class="btn-label-wrapper">
-                        <span class="btn-label">On parle de votre projet ?</span>
-                        <span class="btn-label btn-label-hover">On parle de votre projet ?</span>
+                        <span class="btn-label">Reserver un appel</span>
+                        <span class="btn-label btn-label-hover">Reserver un appel</span>
                     </span>
                 </a>
             </div>
@@ -348,7 +349,7 @@
                         </div>
                     </div>
                     <h3 class="contact-title">Vous avez des questions spécifiques ?</h3>
-                    <p class="contact-text">N’hésitez pas à m’écrire par mail, je suis très réactif pour discuter de vos ambitions.</p>
+                    <p class="contact-text">Réponse sous 24h</p>
                     <a href="mailto:arsaam.studio@gmail.com" class="btn-premium contact-btn">
                         <span class="btn-label-wrapper">
                             <span class="btn-label">Envoyer un mail</span>
