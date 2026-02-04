@@ -365,7 +365,7 @@
 <style>
     .hero-container {
         padding: 2rem;
-        height: calc(100vh - 120px);
+        height: fit-content;
         max-height: 800px;
         display: flex;
         align-items: center;
@@ -377,10 +377,10 @@
         color: var(--color-bg); /* #DBD2C4 */
         width: 100%;
         max-height: 800px;
-        height: 100%;
+        height: fit-content;
         max-width: 1400px;
         border-radius: 40px;
-        padding: 4rem 3rem;
+        padding: 8rem 3rem;
         position: relative;
         overflow: hidden;
         display: flex;
@@ -588,7 +588,7 @@
     @media (min-width: 1024px) {
         .offers-section {
             background: url("../lib/assets/bg-wave.webp") center/cover no-repeat !important;
-            background-attachment: fixed;
+            background-attachment: fixed !important;
         }
     }
 
@@ -599,7 +599,7 @@
     }
 
     .offers-title {
-        font-family: var(--font-sans);
+        font-family: var(--font-serif);
         font-size: clamp(2rem, 4vw, 3rem);
         text-align: center;
         margin-bottom: 6rem;
@@ -750,11 +750,17 @@
         gap: 1.5rem;
         padding-top: 2rem;
         border-top: 1px solid #E0D9D1;
+        background-color: #F5F5F5;
     }
 
     .methodology-item:nth-child(4),
     .methodology-item:nth-child(5) {
         grid-column: span 3;
+    }
+
+    .methodology-item:nth-child(1) {
+        position: sticky;
+        top: 17%;
     }
 
     .method-step {
