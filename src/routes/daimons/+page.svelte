@@ -22,17 +22,40 @@
     onMount(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.to(horizontalContainer, {
-            x: () => -(horizontalContainer.scrollWidth - window.innerWidth),
-            ease: "none",
-            scrollTrigger: {
-                trigger: horizontalSection,
-                pin: true,
-                scrub: 1,
-                end: () => "+=" + (horizontalContainer.scrollWidth - window.innerWidth),
-                invalidateOnRefresh: true
+        let st;
+
+        function initScrollAnimation() {
+            // Kill existing ScrollTrigger if any
+            if (st) st.kill();
+
+            const scrollDistance = horizontalContainer.scrollWidth - window.innerWidth;
+
+            // Only enable horizontal scroll if there's content to scroll
+            if (scrollDistance > 50) {
+                st = ScrollTrigger.create({
+                    trigger: horizontalSection,
+                    pin: true,
+                    scrub: 1,
+                    end: () => "+=" + scrollDistance,
+                    invalidateOnRefresh: true,
+                    animation: gsap.to(horizontalContainer, {
+                        x: -scrollDistance,
+                        ease: "none"
+                    })
+                });
             }
-        });
+        }
+
+        // Initialize on load
+        initScrollAnimation();
+
+        // Re-initialize on resize
+        window.addEventListener('resize', initScrollAnimation);
+
+        return () => {
+            if (st) st.kill();
+            window.removeEventListener('resize', initScrollAnimation);
+        };
     });
 </script>
 

@@ -1,9 +1,47 @@
 <script>
+    import { onMount } from 'svelte';
     import { page } from '$app/stores';
     import logo from '$lib/assets/Arsaam Studio_Logos/-logo-reverse-rgb.png';
+
+    let lastScrollY = 0;
+    let headerHidden = false;
+    let isMobile = false;
+
+    onMount(() => {
+        const checkMobile = () => {
+            isMobile = window.innerWidth <= 768;
+        };
+        
+        const handleScroll = () => {
+            if (!isMobile) {
+                headerHidden = false;
+                return;
+            }
+            
+            const currentScrollY = window.scrollY;
+            
+            // Hide header when scrolling down, show when scrolling up
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                headerHidden = true;
+            } else {
+                headerHidden = false;
+            }
+            
+            lastScrollY = currentScrollY;
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('resize', checkMobile);
+            window.removeEventListener('scroll', handleScroll);
+        };
+    });
 </script>
 
-<header>
+<header class:hidden={headerHidden}>
     <div class="container nav-wrapper">
         <a href="/" class="logo-area">
             <img src={logo} alt="Arsaam Studio" class="logo-img" />
@@ -36,6 +74,11 @@
         top: 0;
         background-color: #F5F5F5;
         z-index: 100;
+        transition: transform 0.3s ease;
+    }
+
+    header.hidden {
+        transform: translateY(-100%);
     }
 
     .nav-wrapper {
@@ -65,11 +108,42 @@
         font-weight: 500;
         color: var(--color-text);
         opacity: 0.8;
+        position: relative;
+        padding: 0.2rem 0;
+        transition: all 0.3s ease;
+    }
+
+    nav a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background-color: var(--color-primary);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+    }
+
+    nav a:hover {
+        opacity: 1;
+        color: var(--color-primary);
+    }
+
+    nav a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
     }
 
     nav a.active {
         opacity: 1;
         font-weight: 600;
+        color: var(--color-primary);
+    }
+
+    nav a.active::after {
+        transform: scaleX(1);
     }
 
     .btn-whatsapp {
@@ -134,12 +208,36 @@
     }
 
     @media (max-width: 768px) {
+        header {
+            padding: 0.75rem 0;
+        }
         .nav-wrapper {
-            flex-direction: column;
-            gap: 1.5rem;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: space-between;
+        }
+        .logo-img {
+            height: 40px;
         }
         nav {
             order: 3;
+            width: 100%;
+            justify-content: center;
+            gap: 1.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        nav a {
+            font-size: 0.85rem;
+        }
+        .btn-whatsapp {
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            gap: 0.5rem;
+        }
+        .btn-whatsapp .btn-label-wrapper {
+            display: none;
         }
     }
 </style>

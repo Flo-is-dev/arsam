@@ -3,6 +3,7 @@
     import { fly, slide } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
     import SEO from "$lib/components/SEO.svelte";
+    import Loader from "$lib/components/Loader.svelte";
 
     // Assets for Projects
     import imgEthic from "$lib/assets/home/project1.webp";
@@ -116,6 +117,8 @@
 </script>
 
 <SEO title="Arsaam Studio - Agence Créative" description="Design d'exception et stratégie de marque pour les entreprises ambitieuses." />
+
+<Loader />
 
 <div class="page-transition">
     <!-- HERO SECTION -->
@@ -416,7 +419,7 @@
     }
 
     .hero-title {
-        font-size: clamp(2.5rem, 4.5vw, 5rem);
+        font-size: clamp(2rem, 4.5vw, 5rem);
         line-height: 1.1;
         font-weight: 500;
         margin: 0;
@@ -761,6 +764,31 @@
     .methodology-item:nth-child(1) {
         position: sticky;
         top: 17%;
+        z-index: 1;
+    }
+
+    .methodology-item:nth-child(2) {
+        position: sticky;
+        top: 24%;
+        z-index: 2;
+    }
+
+    .methodology-item:nth-child(3) {
+        position: sticky;
+        top: 31%;
+        z-index: 3;
+    }
+
+    .methodology-item:nth-child(4) {
+        position: sticky;
+        top: 38%;
+        z-index: 4;
+    }
+
+    .methodology-item:nth-child(5) {
+        position: sticky;
+        top: 45%;
+        z-index: 5;
     }
 
     .method-step {
@@ -1032,25 +1060,45 @@
         }
         .projects-grid {
             grid-template-columns: 1fr;
+            gap: 2rem;
         }
         .section-title-large {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
         .offers-section {
-            padding: 6rem 0;
+            padding: 0;
+        }
+        .offers-title {
+            margin-bottom: 2rem;
+        }
+        .offers-grid {
+            margin-bottom: 2rem;
+            gap: 2rem;
         }
         .offer-card {
-            margin-inline: 1.5rem;
+            margin-inline: 1rem;
+            padding: 2.5rem 1.5rem 4rem 1.5rem;
+        }
+        .methodology-section,
+        .faq-section {
+            padding: 4rem 0;
         }
         .methodology-grid {
             grid-template-columns: 1fr;
-            gap: 2.5rem;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .final-cta {
+            margin-top: 2rem;
         }
         .faq-label {
             font-size: 1.5rem;
         }
         .faq-title {
             font-size: 2rem;
+        }
+        .faq-header {
+            margin-bottom: 3rem;
         }
     }
 </style>
