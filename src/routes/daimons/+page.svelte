@@ -145,7 +145,7 @@ Comment rassurer les entreprises sur une technologie de rupture tout en affirman
             <h2 class="offers-title"><span class="serif-italic">Ce projet vous inspire ?</span></h2>
             
            
-        <div class="final-cta s-y_bCXRrkrYfP"><a href="a-propos" target="_blank" class="btn-premium dark-btn large-btn s-y_bCXRrkrYfP"><span class="btn-label-wrapper s-y_bCXRrkrYfP"><span class="btn-label s-y_bCXRrkrYfP">On parle du vôtre ?</span> <span class="btn-label btn-label-hover s-y_bCXRrkrYfP">On parle du vôtre ?</span></span></a></div>
+        <div class="final-cta s-y_bCXRrkrYfP"><a href="https://cal.com/arsaam-studio/30min?user=arsaam-studio" target="_blank" class="btn-premium dark-btn large-btn s-y_bCXRrkrYfP"><span class="btn-label-wrapper s-y_bCXRrkrYfP"><span class="btn-label s-y_bCXRrkrYfP">On parle du vôtre ?</span> <span class="btn-label btn-label-hover s-y_bCXRrkrYfP">On parle du vôtre ?</span></span></a></div>
             
         </div>
     </section>

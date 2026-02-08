@@ -3,7 +3,7 @@
     import { fly, slide } from 'svelte/transition';
     import { quintOut } from 'svelte/easing';
     import SEO from "$lib/components/SEO.svelte";
-    import Loader from "$lib/components/Loader.svelte";
+
 
     // Assets for Projects
     import imgEthic from "$lib/assets/home/project1.webp";
@@ -118,7 +118,7 @@
 
 <SEO title="Arsaam Studio - Agence Créative" description="Design d'exception et stratégie de marque pour les entreprises ambitieuses." />
 
-<Loader />
+
 
 <div class="page-transition">
     <!-- HERO SECTION -->
@@ -201,7 +201,7 @@
                 <h3 class="vision-subtitle">J’accompagne les structures qui ont une vraie histoire à raconter.</h3>
                 <p>Vous êtes une marque artisanale, propriétaire d’un lieu atypique ou historique, une entreprise familiale, ou bien une marque qui connecte plusieurs cultures et célèbrent son double héritage ? </p>
                 <p>Ces histoires méritent une identité visuelle authentique. Pas un logo générique. Mais une identité profondément ancrée, qui porte du sens, qui crée de la connexion avec votre vision.</p><div class="final-cta">
-                <a href="a-propos" target="_blank" class="btn-premium dark-btn large-btn">
+                <a href="a-propos" class="btn-premium dark-btn large-btn">
                     <span class="btn-label-wrapper">
                         <span class="btn-label">Découvrir Arsaam Studio</span>
                         <span class="btn-label btn-label-hover">Découvrir Arsaam Studio</span>
@@ -518,8 +518,13 @@
     .project-img-wrapper img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        display: block;
+        /* object-fit: cover; */
         transition: transform 0.6s cubic-bezier(0.2, 0, 0.2, 1);
+    }
+
+    .project-item:hover .project-img-wrapper img {
+        transform: scale(1.05);
     }
 
 
@@ -761,35 +766,6 @@
         grid-column: span 3;
     }
 
-    .methodology-item:nth-child(1) {
-        position: sticky;
-        top: 17%;
-        z-index: 1;
-    }
-
-    .methodology-item:nth-child(2) {
-        position: sticky;
-        top: 24%;
-        z-index: 2;
-    }
-
-    .methodology-item:nth-child(3) {
-        position: sticky;
-        top: 31%;
-        z-index: 3;
-    }
-
-    .methodology-item:nth-child(4) {
-        position: sticky;
-        top: 38%;
-        z-index: 4;
-    }
-
-    .methodology-item:nth-child(5) {
-        position: sticky;
-        top: 45%;
-        z-index: 5;
-    }
 
     .method-step {
         font-size: 1.25rem;
@@ -1044,6 +1020,35 @@
     }
 
     @media (max-width: 768px) {
+         .methodology-item:nth-child(1) {
+        position: sticky;
+        top: 17%;
+        z-index: 1;
+    }
+
+    .methodology-item:nth-child(2) {
+        position: sticky;
+        top: 24%;
+        z-index: 2;
+    }
+
+    .methodology-item:nth-child(3) {
+        position: sticky;
+        top: 31%;
+        z-index: 3;
+    }
+
+    .methodology-item:nth-child(4) {
+        position: sticky;
+        top: 38%;
+        z-index: 4;
+    }
+
+    .methodology-item:nth-child(5) {
+        position: sticky;
+        top: 45%;
+        z-index: 5;
+    }
         .hero-container {
             padding: 1rem;
         }
