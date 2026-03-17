@@ -11,25 +11,21 @@
 
 <SEO title="Snapel - Redéfinir l'énergie" description="Snapel: Une alternative saine et inspirante aux boissons énergisantes pour la génération créative." />
 
-<section class="project-intro">
-    <div class="container container--wide">
-        <div class="intro-grid">
-            <div class="intro-sidebar">
-                <h1>Snapel</h1>
-                <ul class="services-list">
-                    <li>Identité visuelle</li>
-                    <li>Packaging</li>
-                    <li>Réseaux sociaux</li>
-                    <li>Webdesign</li>
-                </ul>
-            </div>
-            <div class="intro-main">
-                <h2 class="premium-title">Redéfinir l'énergie pour la génération créative.</h2>
-                <div class="description-block">
-                    <p>Le marché des boissons énergisantes est souvent saturé de codes agressifs et sombres. Pour Snapel, l'objectif était de créer une alternative saine et inspirante.</p>
-                    <p>Une boisson conçue pour ceux qui créent, qui codent et qui s'investissent : gamers, créateurs de contenu et jeunes professionnels. Le défi était d'allier l'aspect technologique et connecté à la pureté des ingrédients naturels.</p>
-                </div>
-            </div>
+<section class="intro-section reveal">
+    <div class="container container--wide grid-2">
+        <div class="col-left">
+            <h2 class="section-tag">Snapel</h2>
+            <ul class="tag-list">
+                <li>Identité visuelle</li>
+                <li>Packaging</li>
+                <li>Réseaux sociaux</li>
+                <li>Webdesign</li>
+            </ul>
+        </div>
+        <div class="col-right">
+            <h1 class="main-title">Redéfinir l'énergie pour la génération créative.</h1>
+            <p class="description">Le marché des boissons énergisantes est souvent saturé de codes agressifs et sombres. Pour Snapel, l'objectif était de créer une alternative saine et inspirante.</p>
+            <p class="description">Une boisson conçue pour ceux qui créent, qui codent et qui s'investissent : gamers, créateurs de contenu et jeunes professionnels. Le défi était d'allier l'aspect technologique et connecté à la pureté des ingrédients naturels.</p>
         </div>
     </div>
 </section>
@@ -100,57 +96,58 @@
         padding: 3rem 0;
     }
 
-    /* Intro Section */
-    .project-intro {
-        padding-top: 8rem;
-    }
-
-    .intro-grid {
+    .grid-2 {
         display: grid;
-        grid-template-columns: 300px 1fr;
-        gap: 6rem;
+        grid-template-columns: 1fr 2.5fr;
+        gap: 4rem;
+        align-items: start;
     }
 
-    h1 {
-        font-size: 2rem;
-        font-weight: 500;
-        margin-bottom: 2rem;
+    .section-tag {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        font-weight: 600;
     }
 
-    .services-list {
-        list-style: disc;
-        padding-left: 1.2rem;
+    .tag-list {
+        list-style: none;
+        padding-left: 1rem;
+    }
+
+    .tag-list li {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+        position: relative;
         opacity: 0.8;
     }
 
-    .services-list li {
-        margin-bottom: 0.5rem;
-        font-size: 1.1rem;
+    .tag-list li::before {
+        content: "•";
+        position: absolute;
+        left: -1rem;
+        color: var(--color-primary);
     }
 
-     .section-p {
+    .main-title {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        color: var(--color-text);
+    }
+
+    .description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        opacity: 0.7;
+        max-width: 800px;
+    }
+
+    .section-p {
         font-size: 1.2rem;
-        /* max-width: 600px; */
         margin-bottom: 4rem;
         line-height: 1.4;
-    }
-
-    .premium-title {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height: 1.1;
-        margin-bottom: 3rem;
-        font-weight: 500;
-    }
-
-    .description-block {
-        max-width: 700px;
-    }
-
-    .description-block p {
-        font-size: 1.25rem;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-        opacity: 0.7;
     }
 
     /* Image Styles */
@@ -192,25 +189,10 @@
     }
 
     /* Responsive */
-    @media (max-width: 1024px) {
-        .intro-grid {
+    @media (max-width: 992px) {
+        .grid-2 {
             grid-template-columns: 1fr;
-            gap: 4rem;
-        }
-
-        .services-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            list-style: none;
-            padding: 0;
-        }
-
-        .services-list li {
-            margin-bottom: 0;
-            background: rgba(0,0,0,0.05);
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
+            gap: 2rem;
         }
     }
 
@@ -226,14 +208,6 @@
         .can-grid .image-wrapper {
             height: auto;
             aspect-ratio: 16/9;
-        }
-
-        .premium-title {
-            font-size: 2.25rem;
-        }
-
-        .description-block p {
-            font-size: 1.1rem;
         }
 
         .image-wrapper {

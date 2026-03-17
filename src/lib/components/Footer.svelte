@@ -21,7 +21,7 @@
             <div class="bottom-item">arsaam.studio@gmail.com</div>
             <div class="bottom-item">© 2026 Arsaam Studio</div>
             <div class="bottom-item"><a href="/mentions-legales">Mentions légales</a></div>
-            <div class="bottom-item">On discute de votre projet ?</div>
+            <div class="bottom-item"><a href="https://cal.com/arsaam-studio/30min?user=arsaam-studio" target="_blank" rel="noopener noreferrer">On discute de votre projet ?</a></div>
         </div>
     </div>
 </footer>

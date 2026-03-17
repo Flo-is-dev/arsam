@@ -114,9 +114,26 @@
             openFaq = index;
         }
     }
+
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+            }
+        }))
+    };
 </script>
 
-<SEO title="Arsaam Studio - Agence Créative" description="Design d'exception et stratégie de marque pour les entreprises ambitieuses." />
+<SEO title="Arsaam Studio" description="Arsaam Studio, agence créative spécialisée en branding, identité visuelle et webdesign. Design d'exception et stratégie de marque pour les entreprises ambitieuses." />
+
+<svelte:head>
+    {@html `<script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`}
+</svelte:head>
 
 
 

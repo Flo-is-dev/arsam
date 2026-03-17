@@ -2,7 +2,7 @@
     import SEO from "$lib/components/SEO.svelte";
 </script>
 
-<SEO title="Mentions légales" description="Mentions légales de Arsaam Studio." />
+<SEO title="Mentions légales" description="Mentions légales de Arsaam Studio." noindex={true} />
 
 <section class="legal-notice">
     <div class="container">

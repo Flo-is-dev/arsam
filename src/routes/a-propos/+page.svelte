@@ -3,7 +3,7 @@
     import portrait from "$lib/assets/profil.png";
 </script>
 
-<SEO title="A propos" description="Learn more about my work and vision." />
+<SEO title="À propos - Arsaam Studio" description="Découvrez Arsaam Studio, l'agence créative fondée par Anwar Benkerta. Branding, identité visuelle et stratégie de marque au service des entreprises ambitieuses." />
 
 <section class="about">
     <div class="container">

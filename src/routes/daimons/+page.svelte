@@ -4,7 +4,7 @@
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     
-    // Import assets from mimouna folder
+    // Import assets from Daïmonsuna folder
     import imgBillboard from "$lib/assets/Daimons/daimon-bg.png";
     import imgPapeterie from "$lib/assets/Daimons/Group-355.svg";
     import imgMoodboard from "$lib/assets/Daimons/Frame 40.svg";
@@ -66,7 +66,7 @@
     <section class="intro-section reveal">
         <div class="container grid-2">
             <div class="col-left">
-                <h2 class="section-tag">Mimouna</h2>
+                <h2 class="section-tag">Daïmons</h2>
                 <ul class="tag-list">
                     <li>Identité visuelle</li>
                     <li>Maquette site web</li>
