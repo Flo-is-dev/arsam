@@ -247,7 +247,6 @@
                         <li>Polices sélectionnées</li>
                         <li>Mini charte graphique</li>
                         <li>Photos de profil et bannières réseaux sociaux</li>
-                        <li>3 allers-retours inclus</li>
                     </ul>
                     <div class="offer-price-wrapper">
                         <a href="https://wa.me/33768702214?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'ESSENTIEL%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">
@@ -286,7 +285,6 @@
                         <li>Pack “L’ÉTENDU” inclus</li>
                         <li>Brand Strategy : Analyse de la concurrence, valeurs, message clé et promesse de marque</li>
                         <li>Maquette Figma complète du site web prête pour l’intégration (Desktop & Mobile)</li>
-                        <li>Révisions illimitées</li>
                     </ul>
                     <div class="offer-price-wrapper">
                         <a href="https://wa.me/33768702214?text=Hello%20Anwar%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20l'offre%20%22L'INTÉGRAL%22%2C%20peut-on%20discuter%20de%20mon%20projet%20%3F" target="_blank" rel="noopener noreferrer" class="btn-premium dark-btn">

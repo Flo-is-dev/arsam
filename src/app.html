@@ -5,6 +5,50 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
 		%sveltekit.head%
+
+		<!-- Google Consent Mode v2 : doit s'exécuter AVANT le chargement de gtag.js -->
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+
+			(function () {
+				var consent = {
+					ad_storage: 'denied',
+					ad_user_data: 'denied',
+					ad_personalization: 'denied',
+					analytics_storage: 'denied',
+					wait_for_update: 500
+				};
+
+				try {
+					var saved = JSON.parse(localStorage.getItem('arsaam-cookie-consent'));
+					if (saved) {
+						var ads = saved.ads ? 'granted' : 'denied';
+						consent.ad_storage = ads;
+						consent.ad_user_data = ads;
+						consent.ad_personalization = ads;
+						consent.analytics_storage = saved.analytics ? 'granted' : 'denied';
+					}
+				} catch (e) {
+					/* localStorage indisponible : on reste sur le refus par défaut */
+				}
+
+				gtag('consent', 'default', consent);
+			})();
+
+			// Anonymise les identifiants publicitaires tant que le consentement n'est pas donné,
+			// et conserve le gclid via l'URL plutôt que via un cookie.
+			gtag('set', 'ads_data_redaction', true);
+			gtag('set', 'url_passthrough', true);
+
+			gtag('js', new Date());
+			gtag('config', 'AW-17128996201');
+		</script>
+
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17128996201"></script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>

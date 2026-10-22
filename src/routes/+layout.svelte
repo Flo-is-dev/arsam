@@ -2,6 +2,7 @@
     import "../app.css";
     import Header from "$lib/components/Header.svelte";
     import Footer from "$lib/components/Footer.svelte";
+    import CookieManager from "$lib/components/CookieManager.svelte";
 
     let { children } = $props();
 
@@ -50,6 +51,8 @@
 </main>
 
 <Footer />
+
+<CookieManager />
 
 <style>
     main {
